@@ -3,9 +3,11 @@ import { Container, AppBar, Typography, Grow, Grid } from "@mui/material/";
 import memories from "./images/memories.png";
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
+import useStyles from "./styles";
 import "./App.css";
 
 const App = () => {
+  const classes = useStyles();
   return (
     <Container maxWidth="lg">
       <AppBar position="static" color="inherit">
