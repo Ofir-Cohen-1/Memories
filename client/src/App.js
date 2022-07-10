@@ -1,5 +1,7 @@
-// import logo from "./logo.svg";
+import React, { useEffect } from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
+import { getPosts } from "./actions/Posts";
+import { useDispatch } from "react-redux";
 import memories from "./images/memories.png";
 import Posts from "./components/Posts/Posts";
 // import makeStyles from "@mui/styles/makeStyles";
@@ -16,6 +18,12 @@ import "./App.css";
 
 const App = () => {
   // const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
   return (
     <Container maxWidth="lg">
       <AppBar position="static" color="inherit">
